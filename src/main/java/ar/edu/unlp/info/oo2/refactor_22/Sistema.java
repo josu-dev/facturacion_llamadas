@@ -1,20 +1,28 @@
-package ar.edu.unlp.info.oo2.refactor_21;
+package ar.edu.unlp.info.oo2.refactor_22;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 public class Sistema {
 
     List<Cliente> clientes = new ArrayList<Cliente>();
-    GuiaTelefonica telefonosDisponibles = new GuiaTelefonica();
+    SortedSet<String> telefonosDisponibles = new TreeSet<String>();
 
     public boolean agregarTelefono(String nuevoTelefono) {
-        return this.telefonosDisponibles.agregarTelefono(nuevoTelefono);
+        return this.telefonosDisponibles.add(nuevoTelefono);
+    }
+
+    private String obtenerNuevoTelefono() {
+        String telefono = this.telefonosDisponibles.last();
+        this.telefonosDisponibles.remove(telefono);
+        return telefono;
     }
 
     public Cliente registrarCliente(String identificador, String nombreYApellido, String tipoCliente) {
         Cliente nuevoCliente = ClienteFactory.create(tipoCliente, nombreYApellido,
-                this.telefonosDisponibles.obtenerNuevoTelefono(), identificador);
+                this.obtenerNuevoTelefono(), identificador);
         clientes.add(nuevoCliente);
         return nuevoCliente;
     }
@@ -25,7 +33,7 @@ public class Sistema {
         }
 
         this.clientes.remove(cliente);
-        this.telefonosDisponibles.agregarTelefono(cliente.getTelefono());
+        this.agregarTelefono(cliente.getTelefono());
         return true;
     }
 

@@ -1,4 +1,4 @@
-package ar.edu.unlp.info.oo2.refactor_21;
+package ar.edu.unlp.info.oo2.refactor_25;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,8 +22,14 @@ public abstract class Cliente {
         return this.telefono.equals(otroCliente.telefono);
     }
 
-    public void agregarLlamada(Llamada nuevaLlamada) {
+    private void agregarLlamada(Llamada nuevaLlamada) {
         this.llamadasEfectuadas.add(nuevaLlamada);
+    }
+
+    public Llamada registrarLlamada(Cliente receptor, String tipoLlamada, int duracion) {
+        Llamada nuevaLlamada = LlamadaFactory.create(tipoLlamada, this.telefono, receptor.telefono, duracion);
+        this.agregarLlamada(nuevaLlamada);
+        return nuevaLlamada;
     }
 
     protected abstract double getDescuento();
