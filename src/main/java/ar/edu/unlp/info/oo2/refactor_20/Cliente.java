@@ -13,9 +13,9 @@ public abstract class Cliente {
         return this.telefono;
     }
 
-    public Cliente(String nombre, String tel) {
-        this.nombreYApellido = nombre;
-        this.telefono = tel;
+    public Cliente(String nombreYApellido, String telefono) {
+        this.nombreYApellido = nombreYApellido;
+        this.telefono = telefono;
     }
 
     public void agregarLlamada(Llamada nuevaLlamada) {
