@@ -1,5 +1,13 @@
 # Refactor Ejercicio 3
 
+Este repositorio contiene la resolucion del ejercicio 3 de la practica de refactoring con los items solicitados:
+
+- [UML inicial del codido dado](./UML_Codigo_Inicial.png)
+- [Proceso de refactoring](./Proceso_Refactoring.docx)
+- [UML final del codido refactorizado](./UML_Codigo_Final.png)
+- [Codigo java refactorizado](./src/main/java/ar/edu/unlp/info/oo2/facturacion_llamadas_refactorizado/) _paquete "facturacion\_llamadas\_refactorizado"_
+
+> **NOTA:** cada refactor detallado en el documento de [Proceso de refactoring](Proceso_Refactoring.docx) tiene un paquete dedicado con el codigo completo refactorizado hasta ese punto. Al final de cada refactor se indica el paquete correspondiente.
 ## Enunciado
 
 Ejercicio 3 - Facturación de llamadas
@@ -44,4 +52,4 @@ El diagrama en UML que representa el codigo en su estado previo al proceso de re
 
 El diagrama en UML que representa el codigo en su estado posterior al proceso de refactorizacion es:
 
-<!-- ![UML del codido luego de refactorizarlo](UML_Codigo_Final.png) -->
+![UML del codido luego de refactorizarlo](UML_Codigo_Final.png)
